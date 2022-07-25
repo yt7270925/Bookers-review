@@ -1,0 +1,20 @@
+<%= render 'error', book: @book %>
+
+<h1 class="edit-title">Editing Book</h1>
+
+<%= form_with model: @book, url: book_path(@book), method: :patch do |f| %>
+  <div class="edit-group">
+    <h5>Title</h5>
+    <%= f.text_field :title %>
+  </div>
+  <div class="edit-group">
+    <h5>Body</h5>
+    <%= f.text_area :body %>
+  </div>
+  <div class="edit-group">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+  <%= link_to 'Show', book_path(@book) %> |
+  <%= link_to 'Back', books_path %>
